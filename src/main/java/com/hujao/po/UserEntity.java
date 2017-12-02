@@ -21,4 +21,12 @@ public class UserEntity {
 	 
 	@Column
 	String username;
+	@Column
+	String userpassword;
+	@Column
+	String useremail;
+	@Column
+	String usernick;
+	@Column
+	Integer userbirthyear;
 }

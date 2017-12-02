@@ -7,7 +7,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication
 @ComponentScan
-@EnableWebMvc
 public class SamwestApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SamwestApplication.class, args);

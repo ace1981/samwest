@@ -1,5 +1,14 @@
 package com.hujao.po;
 
-public class ArticleEntity {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+import lombok.*;
+
+@Entity
+public class ArticleEntity {
+	@Getter
+	@Setter
+	@Id
+	String id;
 }

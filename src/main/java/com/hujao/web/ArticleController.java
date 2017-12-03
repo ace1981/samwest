@@ -1,4 +1,4 @@
-package com.hujao.rest;
+package com.hujao.web;
 
 import java.lang.reflect.InvocationTargetException;
 

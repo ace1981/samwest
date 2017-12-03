@@ -6,10 +6,10 @@ import org.apache.activemq.command.ActiveMQQueue;
 import org.apache.activemq.command.ActiveMQTopic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
- 
+
+import com.hujao.common.JSON;
 import com.hujao.model.UserModel;
 import com.hujao.repository.UserRepository;
-import com.hujao.util.JSON;
 
 @Service
 public class UserService {

@@ -6,9 +6,9 @@ import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import com.hujao.common.JSON;
 import com.hujao.model.UserModel;
-import com.hujao.repository.UserRepository;
-import com.hujao.util.JSON;  
+import com.hujao.repository.UserRepository;  
   
 // 双向队列 实现应答模式
 @Component  

@@ -1,4 +1,4 @@
-package com.hujao.rest;
+package com.hujao.web;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

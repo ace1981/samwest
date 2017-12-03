@@ -1,4 +1,4 @@
-package com.hujao.util;
+package com.hujao.common;
 
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;

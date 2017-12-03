@@ -1,5 +1,5 @@
 
-package com.hujao.util;
+package com.hujao.common;
 
 import java.util.Date;
 import java.util.Random;

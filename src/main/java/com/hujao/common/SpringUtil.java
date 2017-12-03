@@ -1,4 +1,4 @@
-package com.hujao.util;
+package com.hujao.common;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;

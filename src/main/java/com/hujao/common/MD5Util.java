@@ -1,4 +1,4 @@
-package com.hujao.util;
+package com.hujao.common;
 import java.security.MessageDigest;
 public class MD5Util {
 

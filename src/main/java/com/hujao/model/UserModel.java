@@ -14,4 +14,5 @@ public class UserModel {
 	Integer userbirthyear;
 	boolean mobileisvalid;
 	boolean emailisvalid;
+	boolean isdeleted;
 }

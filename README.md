@@ -2,7 +2,7 @@
 ---
 This is a sample of restful web project
 
-- springboot
+- 基于springboot
 - 领域驱动分层
 - mysql数据库
 - 集成druid数据源

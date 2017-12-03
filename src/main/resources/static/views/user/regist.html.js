@@ -1,7 +1,7 @@
 var app = angular.module('app', []);
 
 app.controller('registCtrl', function($scope,$http) {
-    $scope.user={};
+    //$scope.user={};
     $scope.registuser=function(){
     	$http({
          url: '../../user/new/',
@@ -17,6 +17,4 @@ app.controller('registCtrl', function($scope,$http) {
             console.log(response.data); 
     	});
     };
-    
 });
-    

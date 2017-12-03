@@ -28,6 +28,11 @@ public class UserRepository {
     	return modelMapper.map(entity,UserModel.class);
     }
     
+    public UserModel modify(UserModel model) {
+    	UserEntity entity =userDao.save(modelMapper.map(model,UserEntity.class));
+    	return modelMapper.map(entity,UserModel.class);
+    }
+    
     public UserModel getById(String id) {    
     	 return modelMapper.map(userMapper.getById(id),UserModel.class);
     }

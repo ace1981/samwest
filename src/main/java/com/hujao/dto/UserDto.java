@@ -8,6 +8,10 @@ public class UserDto {
 	String username;
 	String userpassword;
 	String useremail;
+	String usermobile;
 	String usernick;
 	Integer userbirthyear;
+	boolean mobileisvalid;
+	boolean emailisvalid;
+	boolean isdeleted;
 }

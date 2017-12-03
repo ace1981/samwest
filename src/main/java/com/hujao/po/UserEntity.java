@@ -13,20 +13,26 @@ import lombok.Data;
 @Entity
 @Table(name = "userbasicinfo")
 public class UserEntity {
-	 
 	@Id
 	@GeneratedValue(generator = "uuid")
 	@GenericGenerator(name = "uuid", strategy = "uuid")
 	String id;
-	 
 	@Column
 	String username;
 	@Column
 	String userpassword;
+	@Column
+	String usermobile;
 	@Column
 	String useremail;
 	@Column
 	String usernick;
 	@Column
 	Integer userbirthyear;
+	@Column
+	boolean mobileisvalid;
+	@Column
+	boolean emailisvalid;
+	@Column
+	boolean isdeleted;
 }

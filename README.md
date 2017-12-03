@@ -1,6 +1,6 @@
 # samwest
 ---
-sample of restful web project
+This is a sample of restful web project
 
 - 领域驱动分层
 - mysql数据库
@@ -14,3 +14,4 @@ sample of restful web project
 - 集成elasticsearch
 - 集成modelmapper 对象映射赋值
 - 集成lombok自动属性
+- 自定义启动banner

@@ -23,6 +23,7 @@ public class UserService {
 	}
 	
 	public UserModel add(UserModel model){
+		model=userRepository.add(model);
 		//按道理应该只发一个主题，由email和短息服务去分别执行
 		Destination destination_topic = new ActiveMQTopic("registuser.topic");
 		//本例中消费者都在内部，改用队列组合方式分发
@@ -30,7 +31,7 @@ public class UserService {
 		// spring.jms.pub-sub-domain=false为队列模式 
 		// 因为用了javaconfig重新定义,支持同时收发主题和队列
 		emailProducer.sendMessage(destination_queue, JSON.toJson(model));		 
-		return userRepository.add(model);
+		return model;
 	}
 	
 	public void comfirmEmail(String id){ 

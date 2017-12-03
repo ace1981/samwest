@@ -16,3 +16,4 @@ This is a sample of restful web project
 - 集成modelmapper 对象映射赋值
 - 集成lombok自动属性
 - 自定义启动banner
+- 前端angularjs

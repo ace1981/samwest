@@ -15,6 +15,9 @@ import com.hujao.model.UserModel;
 import com.hujao.service.ArticleService;
 import com.hujao.service.UserService;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+
 @Controller 
 @RequestMapping("/user")
 public class UserController {
@@ -24,7 +27,9 @@ public class UserController {
 	UserService userService;
 	
 	@RequestMapping(value="/new",method=RequestMethod.POST)
-	public @ResponseBody UserDto addUser(@RequestBody UserDto  dto)
+	@ApiOperation(value="用户注册接口", notes="用户注册详细描述")
+	public @ResponseBody UserDto addUser(@ApiParam(required=true, name="UserDto", value="用户传输对象")
+										 @RequestBody UserDto  dto)
 	{	
 		UserModel model=modelMapper.map(dto,UserModel.class);
 		 

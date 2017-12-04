@@ -15,5 +15,6 @@ This is a sample of restful web project
 - 集成elasticsearch
 - 集成modelmapper 对象映射赋值
 - 集成lombok自动属性
+- 集成swagger2 api文檔
 - 自定义启动banner
 - 前端angularjs

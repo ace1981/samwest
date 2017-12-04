@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hujao.common.JSON;
+import com.hujao.common.JedisManager;
 import com.hujao.model.UserModel;
 import com.hujao.repository.UserRepository;
 
@@ -19,6 +20,11 @@ public class UserService {
 	Producer emailProducer;
 	
 	public UserModel getById(String id){
+		if(JedisManager.getInstance().Get(id)!=null)
+		{
+			//取缓存
+			return JSON.toBean(JedisManager.getInstance().Get(id),UserModel.class);
+		}
 		return userRepository.getById(id);
 	}
 	
@@ -30,7 +36,9 @@ public class UserService {
 		Destination destination_queue = new ActiveMQQueue("registuser4email.queue,registuser4sms.queue");
 		// spring.jms.pub-sub-domain=false为队列模式 
 		// 因为用了javaconfig重新定义,支持同时收发主题和队列
-		emailProducer.sendMessage(destination_queue, JSON.toJson(model));		 
+		emailProducer.sendMessage(destination_queue, JSON.toJson(model));	
+		//缓存
+		JedisManager.getInstance().Set(model.getId(), JSON.toJson(model));
 		return model;
 	}
 	

@@ -33,7 +33,7 @@ public class ArticleRepository {
     
     public ArticleModel add(ArticleModel model) {
     	ArticleEntity entity =articleDao.save(modelMapper.map(model,ArticleEntity.class));
-    	articleSearchDao.save(entity);
+    	articleSearchDao.save(model);
     	return modelMapper.map(entity,ArticleModel.class);
     }
     
@@ -44,8 +44,8 @@ public class ArticleRepository {
     public List<ArticleModel> searchByTitle(String queryString) {    
     	 //String queryString = "springboot";//搜索关键字
          QueryStringQueryBuilder builder = new QueryStringQueryBuilder(queryString);
-         Iterable<ArticleEntity> searchResult = articleSearchDao.search(builder);
-         Iterator<ArticleEntity> iterator = searchResult.iterator();
+         Iterable<ArticleModel> searchResult = articleSearchDao.search(builder);
+         Iterator<ArticleModel> iterator = searchResult.iterator();
          List<ArticleModel>list=new ArrayList();
          while (iterator.hasNext()) {       	 
         	 list.add(modelMapper.map(iterator.next(), ArticleModel.class));

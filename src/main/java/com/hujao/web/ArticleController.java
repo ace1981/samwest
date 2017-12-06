@@ -25,8 +25,13 @@ public class ArticleController {
 	@Autowired
 	ArticleService articleService;
 	
-	@RequestMapping("/{id}")
+	@RequestMapping(value="/{id}",method=RequestMethod.GET)
 	public @ResponseBody  ArticleDto getById(@PathVariable("id")String id)
+	{		 
+		return modelMapper.map(articleService.getById(id), ArticleDto.class);		 
+	}
+	@RequestMapping(value="/{id}",method=RequestMethod.DELETE)
+	public @ResponseBody  ArticleDto delById(@PathVariable("id")String id)
 	{		 
 		return modelMapper.map(articleService.getById(id), ArticleDto.class);		 
 	}
@@ -38,4 +43,5 @@ public class ArticleController {
 		 
 		return modelMapper.map(articleService.add(model), ArticleDto.class);		 
 	}
+	
 }

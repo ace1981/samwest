@@ -1,0 +1,7 @@
+http://www.jianshu.com/p/e4f70ddbc287
+
+http://blog.csdn.net/fishmai/article/details/51817429
+
+https://docs.influxdata.com/influxdb/v1.3/introduction/getting_started/
+
+https://www.cnblogs.com/savorboard/p/bash-guide.html

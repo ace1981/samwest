@@ -34,7 +34,7 @@ public class MetricsConfig {
 	
 	@Bean(name = "influxdbReporter")
 	public ScheduledReporter influxdbReporter(MetricRegistry metrics) throws Exception {
-	    return InfluxdbReporter.forRegistry(metrics)
+		ScheduledReporter rep= InfluxdbReporter.forRegistry(metrics)
 	            //.protocol(InfluxdbProtocols.http("host_ip_address", port, "username", "password", "database"))
 	            .protocol(InfluxdbProtocols.http("118.190.77.10", 8086, "ace", "ace.123", "sam"))
 	            .convertRatesTo(TimeUnit.SECONDS)
@@ -42,6 +42,8 @@ public class MetricsConfig {
 	            .filter(MetricFilter.ALL)
 	            .skipIdleMetrics(false)
 	            .build();
+		rep.start(10, TimeUnit.SECONDS);
+		return rep;
 	}
 
 	@Bean

@@ -5,3 +5,9 @@ http://blog.csdn.net/fishmai/article/details/51817429
 https://docs.influxdata.com/influxdb/v1.3/introduction/getting_started/
 
 https://www.cnblogs.com/savorboard/p/bash-guide.html
+
+http://blog.csdn.net/gezhonglei2007/article/details/51627821
+
+https://hub.docker.com/_/telegraf/
+
+http://www.jianshu.com/p/91a7b55bd198

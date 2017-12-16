@@ -10,7 +10,7 @@ docker run --name=grafana -d --restart=always \
   -e "GF_SECURITY_ADMIN_PASSWORD=secret" \
   grafana/grafana
 ```
-  
+
 ####influxdb
 ```shell
 docker run --name influxdb -d --restart=always \
@@ -51,7 +51,7 @@ docker run --name kibana -d --restart=always \
   kibana:4.5
 ```
 
-####activemq
+####redis
 * redis.conf modify->requirepass
 ```
 port 6379
@@ -116,4 +116,11 @@ docker build -t ace/redis .
 docker run --name redis -d --restart=always \
   -p 6379:6379 \
   ace/redis
+```
+####mysql
+```
+docker run --name mysql -d \
+-p 3306:3306 --restart always \
+-e MYSQL_ROOT_PASSWORD=ace.123 \
+mysql:5.6.35
 ```

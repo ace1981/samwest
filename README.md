@@ -17,5 +17,6 @@ This is a sample of restful web project
 - 集成lombok自动属性
 - 集成swagger2 api文檔
 - 集成aspectj 分层日志切面注入
+- 集成logstash 
 - 自定义启动banner
 - 前端angularjs

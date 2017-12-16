@@ -42,7 +42,7 @@ public class MetricsConfig {
 	            .filter(MetricFilter.ALL)
 	            .skipIdleMetrics(false)
 	            .build();
-		rep.start(10, TimeUnit.SECONDS);
+		rep.start(1, TimeUnit.SECONDS);
 		return rep;
 	}
 

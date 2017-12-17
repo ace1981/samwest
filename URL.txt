@@ -11,3 +11,5 @@ http://blog.csdn.net/gezhonglei2007/article/details/51627821
 https://hub.docker.com/_/telegraf/
 
 http://www.jianshu.com/p/91a7b55bd198
+
+http://blog.csdn.net/u011521890/article/details/78078576

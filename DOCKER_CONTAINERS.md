@@ -124,3 +124,8 @@ docker run --name mysql -d \
 -e MYSQL_ROOT_PASSWORD=ace.123 \
 mysql:5.6.35
 ```
+
+####jar
+```
+docker run --name dadaserver -d --restart always -p 1066:1066 dadaserver
+```

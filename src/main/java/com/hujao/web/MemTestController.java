@@ -20,5 +20,8 @@ public class MemTestController {
 	public @ResponseBody void addUser()
 	{	
 		String[] aaa = new String[2000000];
+		 for (int i = 0; i < 2000000; i++) {    
+	            aaa[i] = new String("aaa");    
+	        }
 	}
 }

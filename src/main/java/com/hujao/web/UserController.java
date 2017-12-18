@@ -35,4 +35,11 @@ public class UserController {
 		 
 		return modelMapper.map(userService.add(model), UserDto.class);		 
 	}
+	
+	@RequestMapping(value="/mmm",method=RequestMethod.GET)
+	//@ApiOperation(value="用户注册接口", notes="用户注册详细描述")
+	public @ResponseBody void addUser1()
+	{	
+		String[] aaa = new String[2000000];
+	}
 }

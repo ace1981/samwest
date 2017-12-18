@@ -15,6 +15,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.codahale.metrics.Gauge;
 import com.codahale.metrics.MetricFilter;
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.ScheduledReporter;
@@ -32,8 +33,10 @@ public class MetricsConfig {
 	@Autowired
 	private MetricRegistry metricRegistry;
 	
+	
 	@Bean(name = "influxdbReporter")
 	public ScheduledReporter influxdbReporter(MetricRegistry metrics) throws Exception {
+		
 		ScheduledReporter rep= InfluxdbReporter.forRegistry(metrics)
 	            //.protocol(InfluxdbProtocols.http("host_ip_address", port, "username", "password", "database"))
 	            .protocol(InfluxdbProtocols.http("118.190.77.10", 8086, "ace", "ace.123", "sam"))
@@ -49,6 +52,24 @@ public class MetricsConfig {
 	@Bean
 	@ExportMetricReader
 	public MetricReader metricReader() {
+		metricRegistry.register("com.hujao.freemem", new Gauge<Long>(){  
+            public Long getValue() {  
+                //这里是获取当前JVM可用内存  
+                return Runtime.getRuntime().freeMemory();  
+            }  
+        });
+		metricRegistry.register("com.hujao.totalmem", new Gauge<Long>(){  
+            public Long getValue() {  
+                //这里是获取当前JVM可用内存  
+                return Runtime.getRuntime().totalMemory();                
+            }  
+        });
+		metricRegistry.register("com.hujao.maxmem", new Gauge<Long>(){  
+            public Long getValue() {  
+                //这里是获取当前JVM可用内存  
+                return Runtime.getRuntime().maxMemory();                
+            }  
+        });
 		return new MetricRegistryMetricReader(metricRegistry);
 	}
 

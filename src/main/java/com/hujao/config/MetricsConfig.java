@@ -45,7 +45,7 @@ public class MetricsConfig {
 	            .filter(MetricFilter.ALL)
 	            .skipIdleMetrics(false)
 	            .build();
-		rep.start(1, TimeUnit.SECONDS);
+		rep.start(5, TimeUnit.SECONDS);
 		return rep;
 	}
 
@@ -60,16 +60,17 @@ public class MetricsConfig {
         });
 		metricRegistry.register("com.hujao.totalmem", new Gauge<Long>(){  
             public Long getValue() {  
-                //这里是获取当前JVM可用内存  
+                //这里是获取当前JVM总内存  
                 return Runtime.getRuntime().totalMemory();                
             }  
         });
 		metricRegistry.register("com.hujao.maxmem", new Gauge<Long>(){  
             public Long getValue() {  
-                //这里是获取当前JVM可用内存  
+                //这里是获取当前JVM最大内存  
                 return Runtime.getRuntime().maxMemory();                
             }  
         });
+		
 		return new MetricRegistryMetricReader(metricRegistry);
 	}
 
